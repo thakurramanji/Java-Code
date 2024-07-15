@@ -21,8 +21,6 @@ public class Main {
         }
     }
 }
-
-
 // Abstract keyword
 //
 //abstract class A {
