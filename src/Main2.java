@@ -1,11 +1,6 @@
 
 // about interface
 
-interface A{
-    void show();
-    void config();
-}
-
 public class Main2 {
 
     public static void main(String[] args) {
