@@ -1,20 +1,38 @@
 
-// interface with Lambda
+// Lambda function with return type
 
-@FunctionalInterface //which have only one method in interface
-interface A {
-    void show(int i);
+@FunctionalInterface
+interface C {
+    int add(int i, int j);
 }
 
 public class Main {
     public static void main(String[] args) {
 
-        A obj = (int i) -> System.out.println("in show "+ i);
+        C obj = (i,j) -> i+j; // only with functional interface
 
-        obj.show(5);
-
+        int res = obj.add(5,8);
+        System.out.println(res);
     }
 }
+
+
+// interface with Lambda
+
+//@FunctionalInterface //which have only one method in interface
+//interface A {
+//    void show(int i);
+//}
+//
+//public class Main {
+//    public static void main(String[] args) {
+//
+//        A obj = (int i) -> System.out.println("in show "+ i);
+//
+//        obj.show(5);
+//
+//    }
+//}
 
 // enum details
 
