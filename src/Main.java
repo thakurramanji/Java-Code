@@ -1,6 +1,7 @@
 
-// enum details
+// interface with Lambda
 
+@FunctionalInterface //which have only one method in interface
 interface A {
     void show(int i);
 }
@@ -15,6 +16,7 @@ public class Main {
     }
 }
 
+// enum details
 
 //enum Laptop {
 //    Mac(100000), Dell(44000), Lenovo(59000), Asus(50000);
