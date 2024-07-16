@@ -1,6 +1,5 @@
 
-// out own exception
-
+// our own exception while handling exception
 class RamaException extends Exception {
     public RamaException(String s) {
         super(s);
@@ -29,8 +28,6 @@ public class Main {
         System.out.println("Bye...");
     }
 }
-
-
 //public class Main {
 //    public static void main(String[] args) {
 //
