@@ -1,20 +1,46 @@
 
-// Lambda function with return type
-
-@FunctionalInterface
-interface C {
-    int add(int i, int j);
-}
-
 public class Main {
     public static void main(String[] args) {
 
-        C obj = (i,j) -> i+j; // only with functional interface
+        int i=0;
+        int j=0;
+        int arr[] = new int[4];
 
-        int res = obj.add(5,8);
-        System.out.println(res);
+        try {
+            j = 18/i;
+            System.out.println(arr[1]);
+            System.out.println(arr[5]);
+        }
+        catch (ArithmeticException e) {
+            System.out.println("Can not divided by zero--");
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("be in your limit");
+        }
+        catch (Exception e) {
+            System.out.println("someting went wrong...");
+        }
+
+        System.out.println("Bye...");
     }
 }
+
+// Lambda function with return type
+
+//@FunctionalInterface
+//interface C {
+//    int add(int i, int j);
+//}
+//
+//public class Main {
+//    public static void main(String[] args) {
+//
+//        C obj = (i,j) -> i+j; // only with functional interface
+//
+//        int res = obj.add(5,8);
+//        System.out.println(res);
+//    }
+//}
 
 
 // interface with Lambda
