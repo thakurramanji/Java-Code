@@ -1,21 +1,29 @@
 
+// out own exception
+
+class RamaException extends Exception {
+    public RamaException(String s) {
+        super(s);
+    }
+}
+
+
+
 public class Main {
     public static void main(String[] args) {
 
-        int i=0;
+        int i=30;
         int j=0;
-        int arr[] = new int[4];
 
         try {
             j = 18/i;
-            System.out.println(arr[1]);
-            System.out.println(arr[5]);
+            if(j==0) {
+                throw new RamaException("Looking Good!!");
+            }
+
         }
-        catch (ArithmeticException e) {
+        catch (RamaException e) {
             System.out.println("Can not divided by zero--");
-        }
-        catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("be in your limit");
         }
         catch (Exception e) {
             System.out.println("someting went wrong...");
@@ -24,6 +32,33 @@ public class Main {
         System.out.println("Bye...");
     }
 }
+
+
+//public class Main {
+//    public static void main(String[] args) {
+//
+//        int i=0;
+//        int j=0;
+//        int arr[] = new int[4];
+//
+//        try {
+//            j = 18/i;
+//            System.out.println(arr[1]);
+//            System.out.println(arr[5]);
+//        }
+//        catch (ArithmeticException e) {
+//            System.out.println("Can not divided by zero--");
+//        }
+//        catch (ArrayIndexOutOfBoundsException e) {
+//            System.out.println("be in your limit");
+//        }
+//        catch (Exception e) {
+//            System.out.println("someting went wrong...");
+//        }
+//
+//        System.out.println("Bye...");
+//    }
+//}
 
 // Lambda function with return type
 
