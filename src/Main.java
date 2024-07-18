@@ -1,38 +1,62 @@
 import java.util.*;
 
-class Student {
-    int age;
-    String name;
 
-    public Student(int age, String name) {
-        this.age = age;
-        this.name = name;
-    }
+// forEach use consumer class
+//
+//import java.util.function.Consumer;
+//
+//class Main {
+//    public static void main(String[] args) {
+//
+//        Consumer<Integer> con = new Consumer<Integer>() {
+//
+//            public void accept(Integer n) {
+//                System.out.println(n);
+//            }
+//        };
+//
+//        List<Integer> nums = Arrays.asList(4,5,9,1,3);
+//
+//        nums.forEach(con);
+//
+//    }
+//}
 
-}
+// Comparator and comparable
 
-class Main {
-    public static void main(String[] args) {
-
-        Comparator<Integer> com = new Comparator<Integer>() {
-            public int compare(Integer i, Integer j) {
-                if(i %10 > j%10) {
-                    return 1;
-                } else {
-                    return -1;
-                }
-            }
-        };
-
-        List<Integer> nums = new ArrayList<>();
-        nums.add(23);
-        nums.add(48);
-        nums.add(11);
-        nums.add(93);
-        nums.add(77);
-        Collections.sort(nums, com);
-
-        System.out.println(nums);
+//class Student {
+//    int age;
+//    String name;
+//
+//    public Student(int age, String name) {
+//        this.age = age;
+//        this.name = name;
+//    }
+//
+//}
+//
+//class Main {
+//    public static void main(String[] args) {
+//
+//        Comparator<Integer> com = new Comparator<Integer>() {
+//            public int compare(Integer i, Integer j) {
+//                if(i %10 > j%10) {
+//                    return 1;
+//                } else {
+//                    return -1;
+//                }
+//            }
+//        };
+//
+//        List<Integer> nums = new ArrayList<>();
+//        nums.add(23);
+//        nums.add(48);
+//        nums.add(11);
+//        nums.add(93);
+//        nums.add(77);
+//        Collections.sort(nums, com);
+//
+//        System.out.println(nums);
 
 
 //        Map<String, Integer> mp = new HashMap<>();
@@ -66,8 +90,8 @@ class Main {
 //        nums.add(7);
 //        System.out.println(nums.get(3));
 //        System.out.println(nums.indexOf(9));
-    }
-}
+//    }
+//}
 
 
 // Race condition resolve with synchronized
