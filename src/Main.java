@@ -1,51 +1,117 @@
+import java.util.*;
 
+class Student {
+    int age;
+    String name;
 
-// Race condition resolve with synchronized
-
-class Cnt {
-    int val;
-
-    public synchronized void inc() {
-        val++;
+    public Student(int age, String name) {
+        this.age = age;
+        this.name = name;
     }
+
 }
 
 class Main {
     public static void main(String[] args) {
-        Cnt c = new Cnt();
 
-        Runnable obj1 = () -> {
-            for (int i = 0; i < 10000; i++) {
-                c.inc();
+        Comparator<Integer> com = new Comparator<Integer>() {
+            public int compare(Integer i, Integer j) {
+                if(i %10 > j%10) {
+                    return 1;
+                } else {
+                    return -1;
+                }
             }
         };
 
-        Runnable obj2 = () -> {
-            for (int i = 0; i < 10000; i++) {
-                c.inc();
-            }
-        };
+        List<Integer> nums = new ArrayList<>();
+        nums.add(23);
+        nums.add(48);
+        nums.add(11);
+        nums.add(93);
+        nums.add(77);
+        Collections.sort(nums, com);
 
-        Thread t1 = new Thread(obj1);
-        Thread t2 = new Thread(obj2);
+        System.out.println(nums);
 
-        t1.start();
-        t2.start();
 
-        try {
-            t1.join();
-            t2.join(); // Wait for both threads to finish
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        Map<String, Integer> mp = new HashMap<>();
+//        mp.put("Ramanji", 77);
+//        mp.put("Pintu", 99);
+//        mp.put("George", 89);
+//        mp.put("Richa", 100);
+//        System.out.println(mp.get("Ramanji"));
 
-        System.out.println(c.val); // Now the expected output is 20000
+
+
+//        Collection<Integer> nums = new TreeSet<Integer>(); // Set // HashSet //
+//        nums.add(51);
+//        nums.add(82);
+//        nums.add(19);
+//        nums.add(99);
+//        nums.add(77);
+//
+//        Iterator<Integer> its = nums.iterator();
+//
+//        while(its.hasNext()) {
+//            System.out.println(its.next());
+//        }
+
+//        List<Integer> nums = new ArrayList<Integer>();
+//        nums.add(5);
+//        nums.add(8);
+//        nums.add(1);
+//        nums.add(9);
+//        nums.add(2);
+//        nums.add(7);
+//        System.out.println(nums.get(3));
+//        System.out.println(nums.indexOf(9));
     }
 }
 
 
+// Race condition resolve with synchronized
 
-
+//class Cnt {
+//    int val;
+//
+//    public synchronized void inc() {
+//        val++;
+//    }
+//}
+//
+//class Main {
+//    public static void main(String[] args) {
+//        Cnt c = new Cnt();
+//
+//        Runnable obj1 = () -> {
+//            for (int i = 0; i < 10000; i++) {
+//                c.inc();
+//            }
+//        };
+//
+//        Runnable obj2 = () -> {
+//            for (int i = 0; i < 10000; i++) {
+//                c.inc();
+//            }
+//        };
+//
+//        Thread t1 = new Thread(obj1);
+//        Thread t2 = new Thread(obj2);
+//
+//        t1.start();
+//        t2.start();
+//
+//        try {
+//            t1.join();
+//            t2.join(); // Wait for both threads to finish
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        System.out.println(c.val); // Now the expected output is 20000
+//    }
+//}
 
 
 
